@@ -3,21 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Info Hub</title>
-    <link rel="stylesheet" href="Css/index.css">
+    <title>Game Info By Celestial</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
     <div id="popup-overlay" class="overlay"></div>
 
     <div id="popup" class="popup">
-        <img src="Img/4659-hentai-pfpsgg.gif" alt="">
-        <p>ยินดีต้อนรับสู่ Game Info Hub!</p>
+        <img src="Img/Logo.png" alt="">
+        <p>ยินดีต้อนรับสู่ Game Info By Celestial!</p>
+        <!-- เพิ่ม checkbox สำหรับเลือกห้ามแสดงอีก 30 นาที -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="dontShowAgain"> <label for="dontShowAgain">ห้ามแสดงอีก 30 นาที</label>
+        </div>
         <button id="close-btn">ปิด</button>
     </div>
-
+    
     <header>
-        <h1>Game Info Hub</h1>
+        <div class="logo-container">
+            <img src="Img/logo.png" alt="Game Info By Celestial!" class="logo">
+        </div>
+        <h1>Game Info By Celestial!</h1>
+        <div class="button-container">
+            <a href="index.html"><button>🏠 กลับหน้าหลัก</button></a>
+        </div>
+        <!-- ปุ่มช่องทางการติดต่อ (Facebook) -->
+        <div id="contact-buttons">
+            <button class="contact-btn" id="contact-facebook">ติดต่อผ่าน Facebook</button>
+        </div>
+
+        <!-- ปุ่มแยกประเภทของเกม -->
+        <div class="game-category-filter">
+            <button class="filter-btn" onclick="filterCategory('RPG')">RPG</button>
+            <button class="filter-btn" onclick="filterCategory('Action')">Action</button>
+            <button class="filter-btn" onclick="filterCategory('Adventure')">Adventure</button>
+            <button class="filter-btn" onclick="filterCategory('Shooter')">Shooter</button>
+            <button class="filter-btn" onclick="filterCategory('Strategy')">Strategy</button>
+            <button class="filter-btn" onclick="filterCategory('Simulation')">Simulation</button>
+            <button class="filter-btn" onclick="filterCategory('Sports')">Sports</button>
+            <button class="filter-btn" onclick="filterCategory('Horror')">Horror</button>
+            <button class="filter-btn" onclick="filterCategory('Fighting')">Fighting</button>
+            <button class="filter-btn" onclick="filterCategory('Puzzle')">Puzzle</button>
+            <button class="filter-btn" onclick="filterCategory('MOBA')">MOBA</button>
+            <button class="filter-btn" onclick="filterCategory('Racing')">Racing</button>
+        </div>
+        <div id="game-count">พบเกมทั้งหมด 0 เกม</div>
     </header>
 
     <main>
@@ -31,6 +62,97 @@
                     <button>ดูรายละเอียดเพิ่มเติม</button>
                 </a>
             </div>
+            
+            <div class="game-box" data-category="Action">
+                <img src="Img/Spider-Man 2.jpg" alt="Spider-Man 2">
+                <h2>Spider-Man 2</h2>
+                <p><strong>ประเภท:</strong> Action</p>
+                <p>เกมผจญภัยในโลกเปิดของ Spider-Man ที่มีทั้ง Peter Parker และ Miles Morales</p>
+                <a href="Spider-Man 2.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Adventure">
+                <img src="Img/The Legend of Zelda Tears of the Kingdom.jpg" alt="The Legend of Zelda: Tears of the Kingdom">
+                <h2>The Legend of Zelda: Tears of the Kingdom</h2>
+                <p><strong>ประเภท:</strong> Adventure</p>
+                <p>การผจญภัยครั้งใหม่ของ Link ในการแก้ไขปริศนาและช่วยเหลือดินแดน Hyrule</p>
+                <a href="The Legend of Zelda Tears of the Kingdom.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Shooter">
+                <img src="Img/Call of Duty Modern Warfare II.jpg" alt="Call of Duty: Modern Warfare II">
+                <h2>Call of Duty: Modern Warfare II</h2>
+                <p><strong>ประเภท:</strong> Shooter</p>
+                <p>เกมยิงมุมมองบุคคลที่หนึ่งที่มาพร้อมการต่อสู้ทางทหารที่สมจริง</p>
+                <a href="Call of Duty Modern Warfare II.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Strategy">
+                <img src="Img/Total War Warhammer III.jpg" alt="Total War: Warhammer III">
+                <h2>Total War: Warhammer III</h2>
+                <p><strong>ประเภท:</strong> Strategy</p>
+                <p>เกมสงครามยุทธศาสตร์ที่ตั้งอยู่ในโลกแฟนตาซี Warhammer</p>
+                <a href="Total War Warhammer III.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Simulation">
+                <img src="Img/The Sims 4.jpg" alt="The Sims 4">
+                <h2>The Sims 4</h2>
+                <p><strong>ประเภท:</strong> Simulation</p>
+                <p>เกมจำลองชีวิตที่ให้คุณสร้างและควบคุมชีวิตของตัวละครในโลกเสมือนจริง</p>
+                <a href="The Sims 4.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Sports">
+                <img src="Img/FIFA 23.jpg" alt="FIFA 23">
+                <h2>FIFA 23</h2>
+                <p><strong>ประเภท:</strong> Sports</p>
+                <p>เกมฟุตบอลสุดมันที่มาพร้อมกราฟิกที่สมจริงและฟีเจอร์ใหม่ๆ ในโลกฟุตบอล</p>
+                <a href="FIFA 23.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Horror">
+                <img src="Img/Resident Evil 4 Remake.jpg" alt="Resident Evil 4 Remake">
+                <h2>Resident Evil 4 Remake</h2>
+                <p><strong>ประเภท:</strong> Horror</p>
+                <p>เกมสยองขวัญที่เล่าเรื่องของ Leon S. Kennedy ในการช่วยเหลือลูกสาวของประธานาธิบดีในสถานการณ์ที่อันตราย</p>
+                <a href="Resident Evil 4 Remake.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Fighting">
+                <img src="Img/Mortal Kombat 1.jpg" alt="Mortal Kombat 1">
+                <h2>Mortal Kombat 1</h2>
+                <p><strong>ประเภท:</strong> Fighting</p>
+                <p>เกมต่อสู้ที่เต็มไปด้วยความรุนแรงและท่าไม้ตายที่น่าตื่นเต้น</p>
+                <a href="Mortal Kombat 1.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
+            <div class="game-box" data-category="Puzzle">
+                <img src="Img/Tetris Effect.jpg" alt="Tetris Effect">
+                <h2>Tetris Effect</h2>
+                <p><strong>ประเภท:</strong> Puzzle</p>
+                <p>เกมจับคู่บล็อกในรูปแบบที่มีกราฟิกสวยงามและเพลงที่สร้างบรรยากาศสมจริง</p>
+                <a href="Tetris Effect.html">
+                    <button>ดูรายละเอียดเพิ่มเติม</button>
+                </a>
+            </div>
+            
 
             <div class="game-box" data-category="Action">
                 <img src="Img/Senua's Saga.jpg" alt="Senua's Saga: Hellblade II">
