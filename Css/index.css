@@ -307,3 +307,36 @@ body.popup-active {
 .contact-btn:hover {
     background-color: #45a049;
 }
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* จัดการขนาดองค์ประกอบหลัก */
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
+}
+
+/* ปรับขนาดปุ่ม & ข้อความให้อ่านง่ายขึ้นบนมือถือ */
+@media (max-width: 768px) {
+    .game-box {
+        width: 100%; /* ทำให้เกมเต็มหน้าจอมือถือ */
+        margin: 10px 0;
+    }
+
+    .contact-btn {
+        width: 100%; /* ปุ่มกว้างเต็มจอ */
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    /* ปรับป๊อปอัพให้เหมาะกับมือถือ */
+    #popup {
+        width: 90%;
+        max-width: 400px;
+    }
+}
