@@ -1,3 +1,4 @@
+/* ฟอนต์ */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -30,6 +31,42 @@ header {
     border-radius: 10px;
 }
 
+/* เพิ่มการตั้งค่าโลโก้ในส่วน header */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;  /* ขนาดโลโก้ */
+    height: auto;
+    border-radius: 100px;
+}
+
+/* การตั้งค่าปุ่มกรองประเภทเกมในส่วน header */
+.game-category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    background-color: #e94560;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.filter-btn:hover {
+    background-color: #ff2e63;
+}
+
 /* กล่องข้อมูลเกม */
 .games-container {
     display: flex;
@@ -58,6 +95,7 @@ header {
 .game-box img {
     width: 100%;
     border-radius: 8px;
+    border-radius: 10px;
 }
 
 /* ปุ่มกด */
@@ -143,4 +181,129 @@ body.popup-active {
 /* แสดง overlay เมื่อป๊อปอัพเปิด */
 .overlay.show {
     display: block;
+}
+
+/* การตั้งค่าปุ่มกรองประเภทเกมในส่วน header */
+.game-category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    background-color: #e94560;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.filter-btn:hover {
+    background-color: #ff2e63;
+}
+
+/* ปรับแต่งสไตล์สำหรับปุ่มกรองในหน้า */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-container button {
+    background-color: #e94560;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button-container button:hover {
+    background-color: #ff2e63;
+}
+
+/* การตั้งค่า responsive */
+@media (max-width: 768px) {
+    .popup {
+        width: 300px;  /* ขนาดป๊อปอัพที่เล็กลงสำหรับมือถือ */
+        padding: 15px;
+    }
+    
+    .popup img {
+        max-width: 80%; /* ปรับขนาดรูปภาพให้พอดีกับหน้าจอ */
+    }
+
+    /* ปรับขนาดปุ่มในป๊อปอัพ */
+    .popup button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* ปรับปุ่มกรองให้เหมาะสมกับมือถือ */
+    .filter-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    /* ปรับขนาดของเกมบ็อกซ์ */
+    .game-box {
+        width: 220px; /* ลดขนาดของเกมบ็อกซ์สำหรับมือถือ */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup {
+        width: 250px;  /* ขนาดป๊อปอัพที่เล็กลงสำหรับหน้าจอขนาดเล็ก */
+        padding: 10px;
+    }
+
+    .popup img {
+        max-width: 70%; /* ปรับขนาดรูปให้เล็กลง */
+    }
+
+    .popup button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .game-box {
+        width: 200px; /* ลดขนาดเกมบ็อกซ์ */
+        padding: 8px;
+    }
+}
+
+#contact-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-btn {
+    background-color: #4CAF50; /* สีเขียว */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #45a049;
 }
